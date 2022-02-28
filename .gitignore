@@ -1,0 +1,9 @@
+.vscode
+.cache
+
+venv/
+__pycache__
+
+.coverage
+coverage_annotation
+.tox
