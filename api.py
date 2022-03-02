@@ -1,6 +1,7 @@
 from distutils.log import debug
 from flask import Flask, make_response, redirect
 
+# Cambio
 app = Flask(__name__)
 
 def index():
