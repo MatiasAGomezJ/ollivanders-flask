@@ -1,8 +1,7 @@
-from distutils.log import debug
 from flask import Flask, make_response, redirect
 from flask_restful import Api
-from get_documents import get_datos
-from controller.Index import Index
+from resources.index import index
+from resources.datos import datos
 
 # Cambio
 app = Flask(__name__)
@@ -22,7 +21,9 @@ api = Api(app, catch_all_404s=True)
 # def datos():
 #     return set(get_datos())
 
-api.add_resource(Index, '/')
+api.add_resource(index, '/')
+api.add_resource(datos, '/datos')
+
 # app.add_url_rule('/user/<name>', 'user', user)
 # app.add_url_rule('/cookie', 'cookie', cookie)
 # app.add_url_rule('/google', 'google', google)
