@@ -6,6 +6,7 @@ class service:
     @staticmethod
     def inventario():
 
+        ## ! TODO: crear db en g
         documentos = db_atlas.get_stock()
 
         items = []
