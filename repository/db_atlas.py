@@ -1,23 +1,15 @@
 from repository.stock import stock
-
+from repository.db import db
 
 class db_atlas:
     @staticmethod
     def get_stock():
-        return stock
+        return db.connectar_db().find({}, {"_id": False})
 
     @staticmethod
     def get_item(name, quality, sell_in):
-        items = []
-        for item in db_atlas.get_stock():
-            if item.get("name").lower() == name.lower() and item.get("quality") == quality and item.get("sell_in") == sell_in:
-                items.append(item)
-        return items
+        return db.connectar_db().find({"name": name, "quality": quality, "sell_in": sell_in}, {"_id": False})
 
     @staticmethod
     def get_name(name):
-        items = []
-        for item in db_atlas.get_stock():
-            if item.get("name").lower() == name.lower():
-                items.append(item)
-        return items
+        return db.connectar_db().find({"name": name}, {"_id": False})
