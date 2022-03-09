@@ -33,3 +33,23 @@ class service:
             items.append(item)
 
         return items
+    
+    @staticmethod
+    def items_by_quality(quality):
+        documentos = db_atlas.get_quality(quality)
+
+        items = []
+        for item in documentos:
+            items.append(item)
+
+        return items
+
+    @staticmethod
+    def items_by_sell_in(sell_in):
+        documentos = db_atlas.get_sell_in(sell_in)
+
+        items = []
+        for item in documentos:
+            items.append(item)
+
+        return items
