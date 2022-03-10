@@ -3,6 +3,8 @@ from repository.db_atlas import db_atlas
 
 class service:
 
+    ## ! TODO: Marshalizar todo
+
     @staticmethod
     def inventario():
 
