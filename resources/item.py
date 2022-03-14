@@ -9,12 +9,7 @@ class item(Resource):
         quality = args.get("quality")
         sell_in = args.get("sell_in")
 
-        if not name:
+        if not name or not quality or not sell_in:
             abort(404, message="No se han pasado los argumentos necesarios")
-        
-        if (quality and sell_in) and (quality.isnumeric() and sell_in.isnumeric()):
-                return service.items(name, int(quality), int(sell_in))
 
-        return service.item_by_name(name)
-
-
+        return service.items(name, int(quality), int(sell_in))

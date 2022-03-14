@@ -2,14 +2,12 @@ from flask_restful import Resource, abort, request
 from services.service import service
 
 
-class quality(Resource):
+class name(Resource):
     def get(self):
         args = request.args
-        quality = args.get("quality")
-        if quality.isnumeric():
-            quality = int(quality)
+        name = args.get("name")
 
-        if not quality:
+        if not name:
             abort(404, message="No se han pasado los argumentos necesarios")
-        
-        return service.items_by_quality(quality)
+
+        return service.item_by_name(name)
