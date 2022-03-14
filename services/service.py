@@ -56,3 +56,7 @@ class service:
             items.append(item)
 
         return items
+
+    @staticmethod
+    def create_item(name, quality, sell_in):
+        db_atlas.create_item(name, quality, sell_in)

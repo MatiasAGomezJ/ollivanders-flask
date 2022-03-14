@@ -19,7 +19,10 @@ class db_atlas:
     def get_quality(quality):
         return db.connectar_db().find({"quality": quality}, {"_id": False})
 
-
     @staticmethod
     def get_sell_in(sell_in):
         return db.connectar_db().find({"sell_in": sell_in}, {"_id": False})
+
+    @staticmethod
+    def create_item(name, quality, sell_in):
+        db.connectar_db.insert_one({"name": name, "quality": quality, "sell_in": sell_in})
