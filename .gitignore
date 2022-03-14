@@ -1,11 +1,12 @@
-.vscode
-.cache
+.vscode/
+.cache/
 
 venv/
-__pycache__
-
+__pycache__/
+.pytest_cache/
 .coverage
 coverage_annotation
-.tox
+.tox/
+*.egg-info/
 
 uri.py
