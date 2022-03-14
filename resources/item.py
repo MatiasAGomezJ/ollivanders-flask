@@ -9,7 +9,10 @@ class item(Resource):
         quality = args.get("quality")
         sell_in = args.get("sell_in")
 
-        if not name or not quality or not sell_in:
-            abort(404, message="No se han pasado los argumentos necesarios")
+        self.checkParams(name, quality, sell_in)
 
         return service.items(name, int(quality), int(sell_in))
+
+    def checkParams(self, name, quality, sell_in):
+        if not name or not quality or not sell_in:
+            abort(404, message="No se han pasado los argumentos necesarios")
