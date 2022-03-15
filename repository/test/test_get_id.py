@@ -3,7 +3,7 @@ from bson.objectid import ObjectId
 import pytest
 
 
-@pytest.mark.get_item_by_id
+@pytest.mark.get_id
 def test_funciona():
     id_item = ObjectId("62285950522af60258662c1d")
     documento = {
@@ -11,4 +11,4 @@ def test_funciona():
         "quality": 3,
         "sell_in": 4
     }
-    assert list(db_atlas.get_item_by_id(id_item)) == [documento]
+    assert list(db_atlas.get__id(id_item)) == [documento]

@@ -13,4 +13,4 @@ def test_funciona():
         "sell_in": sell_in
     }
     resultado = db_atlas.create_item(name, quality, sell_in)
-    assert list(db_atlas.get_item_by_id(resultado.inserted_id)) == [documento]
+    assert list(db_atlas.get_id(resultado.inserted_id)) == [documento]
