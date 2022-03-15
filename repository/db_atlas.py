@@ -25,4 +25,4 @@ class db_atlas:
 
     @staticmethod
     def create_item(name, quality, sell_in):
-        db.connectar_db.insert_one({"name": name, "quality": quality, "sell_in": sell_in})
+        db.connectar_db().insert_one({"name": name, "quality": quality, "sell_in": sell_in})
