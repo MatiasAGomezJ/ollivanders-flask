@@ -12,6 +12,10 @@ class db_atlas:
         return db.connectar_db().find({"name": name, "quality": quality, "sell_in": sell_in}, {"_id": False})
 
     @staticmethod
+    def get_item_by_id(id_item):
+        return db.connectar_db().find({"_id": id_item}, {"_id": False})
+
+    @staticmethod
     def get_name(name):
         return db.connectar_db().find({"name": name}, {"_id": False})
 
