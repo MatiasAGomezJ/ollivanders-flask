@@ -10,3 +10,4 @@ coverage_annotation
 *.egg-info/
 
 uri.py
+Dockerfile
