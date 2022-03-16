@@ -23,6 +23,7 @@ class item(Resource):
         quality = args.get("quality")
         sell_in = args.get("sell_in")
 
+        return [name, quality, sell_in]
         self.checkParams(name, quality, sell_in)
 
         service.create_item(name, quality, sell_in)
