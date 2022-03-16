@@ -6,9 +6,10 @@ from resources.item import item
 from resources.name import name
 from resources.quality import quality
 from resources.sell_in import sell_in
-
+from create_app import create_app
 # Cambio
-app = Flask(__name__)
+
+app = create_app(__name__)
 api = Api(app, catch_all_404s=True)
 
 
