@@ -18,7 +18,6 @@ class name(Resource):
         quality = 1
         sell_in = 1
 
-        return [name, quality, sell_in]
         if not name:
             abort(404, message="No se han pasado los argumentos necesarios")
 

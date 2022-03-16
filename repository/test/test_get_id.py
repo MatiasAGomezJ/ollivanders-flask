@@ -11,4 +11,4 @@ def test_funciona():
         "quality": 3,
         "sell_in": 4
     }
-    assert list(db_atlas.get__id(id_item)) == [documento]
+    assert list(db_atlas.get_id(id_item)) == [documento]
