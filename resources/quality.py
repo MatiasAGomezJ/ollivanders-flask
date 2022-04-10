@@ -11,5 +11,5 @@ class quality(Resource):
 
         if not quality:
             abort(404, message="No se han pasado los argumentos necesarios")
-        
+
         return service.items_by_quality(quality)

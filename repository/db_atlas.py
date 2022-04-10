@@ -9,7 +9,9 @@ class db_atlas:
 
     @staticmethod
     def get_item(name, quality, sell_in):
-        return db.connectar_db().find({"name": name, "quality": quality, "sell_in": sell_in}, {"_id": False})
+        return db.connectar_db().find(
+            {"name": name, "quality": quality, "sell_in": sell_in}, {"_id": False}
+        )
 
     @staticmethod
     def get_id(id_item):
@@ -29,8 +31,12 @@ class db_atlas:
 
     @staticmethod
     def create_item(name, quality, sell_in):
-        return db.connectar_db().insert_one({"name": name, "quality": quality, "sell_in": sell_in})
+        return db.connectar_db().insert_one(
+            {"name": name, "quality": quality, "sell_in": sell_in}
+        )
 
     @staticmethod
     def delete_item(name, quality, sell_in):
-        return db.connectar_db().delete_one({"name": name, "quality": quality, "sell_in": sell_in})
+        return db.connectar_db().delete_one(
+            {"name": name, "quality": quality, "sell_in": sell_in}
+        )

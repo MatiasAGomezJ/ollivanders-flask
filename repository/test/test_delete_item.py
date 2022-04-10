@@ -7,11 +7,7 @@ def funciona():
     name = "Alfredo"
     quality = 500
     sell_in = 200
-    documento = {
-        "name": name,
-        "quality": quality,
-        "sell_in": sell_in
-    }
+    documento = {"name": name, "quality": quality, "sell_in": sell_in}
 
     # ! Crear un item para borrar
     resultado = db_atlas.delete_item()

@@ -2,10 +2,11 @@ import pytest
 import api
 import json
 
+
 @pytest.mark.get_resource
 def test_funciona():
     app = api.app.test_client()
-    resp = app.get('/item?name=Sulfuras&quality=50&sell_in=7')
+    resp = app.get("/item?name=Sulfuras&quality=50&sell_in=7")
 
     assert resp.status_code == 200
 

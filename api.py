@@ -7,18 +7,19 @@ from resources.name import name
 from resources.quality import quality
 from resources.sell_in import sell_in
 from create_app import create_app
+
 # Cambio
 
 app = create_app(__name__)
 api = Api(app, catch_all_404s=True)
 
 
-api.add_resource(index, '/')
-api.add_resource(inventario, '/inventario')
-api.add_resource(item, '/item')
-api.add_resource(name, '/name')
-api.add_resource(quality, '/quality')
-api.add_resource(sell_in, '/sell_in')
+api.add_resource(index, "/")
+api.add_resource(inventario, "/inventario")
+api.add_resource(item, "/item")
+api.add_resource(name, "/name")
+api.add_resource(quality, "/quality")
+api.add_resource(sell_in, "/sell_in")
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", debug=True)

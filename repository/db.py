@@ -6,4 +6,4 @@ class db:
     @staticmethod
     def connectar_db():
         conexion = connect(host=uri)
-        return conexion["ollivanders"]["ollivanders"]   
+        return conexion["ollivanders"]["ollivanders"]

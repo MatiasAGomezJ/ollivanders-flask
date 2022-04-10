@@ -36,7 +36,7 @@ class service:
             items.append(item)
 
         return items
-    
+
     @staticmethod
     def items_by_quality(quality):
         documentos = db_atlas.get_quality(quality)
