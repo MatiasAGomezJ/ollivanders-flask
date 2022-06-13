@@ -1,6 +1,5 @@
 from flask_restful import fields, marshal_with
 from repository.get_db_atlas import get_db_atlas
-from flask import g
 
 class service:
 
