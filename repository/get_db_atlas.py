@@ -1,6 +1,5 @@
 from flask import g
 from repository.db_atlas import db_atlas
-from repository.db import db
 
 
 def get_db_atlas():
