@@ -1,5 +1,6 @@
-from repository.db_atlas import db_atlas
 from flask_restful import fields, marshal_with
+from repository.get_db_atlas import get_db_atlas
+from flask import g
 
 class service:
 
@@ -12,8 +13,7 @@ class service:
     @staticmethod
     @marshal_with(item_schema)
     def inventario():
-
-        ## ! TODO: crear db en g
+        db_atlas = get_db_atlas()
         documentos = db_atlas.get_stock()
 
         items = []
@@ -25,6 +25,7 @@ class service:
     @staticmethod
     @marshal_with(item_schema)
     def item_by_name(name):
+        db_atlas = get_db_atlas()
         documentos = db_atlas.get_name(name)
 
         items = []
@@ -36,6 +37,7 @@ class service:
     @staticmethod
     @marshal_with(item_schema)
     def items(name, quality, sell_in):
+        db_atlas = get_db_atlas()
         documentos = db_atlas.get_item(name, quality, sell_in)
 
         items = []
@@ -47,6 +49,7 @@ class service:
     @staticmethod
     @marshal_with(item_schema)
     def items_by_quality(quality):
+        db_atlas = get_db_atlas()
         documentos = db_atlas.get_quality(quality)
 
         items = []
@@ -58,6 +61,7 @@ class service:
     @staticmethod
     @marshal_with(item_schema)
     def items_by_sell_in(sell_in):
+        db_atlas = get_db_atlas()
         documentos = db_atlas.get_sell_in(sell_in)
 
         items = []
@@ -68,4 +72,5 @@ class service:
 
     @staticmethod
     def create_item(name, quality, sell_in):
+        db_atlas = get_db_atlas()
         db_atlas.create_item(name, quality, sell_in)
