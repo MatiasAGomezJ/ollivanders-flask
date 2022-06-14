@@ -12,12 +12,17 @@ from create_app import create_app
 app = create_app(__name__)
 api = Api(app, catch_all_404s=True)
 
-
+# curl localhost:5000
 api.add_resource(index, '/')
+# curl localhost:5000/inventario
 api.add_resource(inventario, '/inventario')
+
 api.add_resource(item, '/item')
+# curl localhost:5000/name?name=Aged_brie
 api.add_resource(name, '/name')
+# curl localhost:5000/quality?quality=22
 api.add_resource(quality, '/quality')
+# curl localhost:5000/sell_in?sell_in=8
 api.add_resource(sell_in, '/sell_in')
 
 if __name__ == '__main__':
