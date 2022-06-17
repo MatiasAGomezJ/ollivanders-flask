@@ -1,14 +1,12 @@
-from flask_restful import Resource, abort
+from flask_restful import Resource
 from services.service import service
-
+from resources.checking import check_quality_param
 
 class quality(Resource):
     def get(self, quality):
-        
-        if quality.isnumeric():
-            quality = int(quality)
 
-        if not quality:
-            abort(404, message="No se han pasado los argumentos necesarios")
+        check_quality_param(quality)
+
+        quality = int(quality)
         
         return service.items_by_quality(quality)
