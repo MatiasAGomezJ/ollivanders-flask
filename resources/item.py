@@ -13,6 +13,9 @@ class item(Resource):
     def post(self, name, quality, sell_in):
 
         check_item_params(name, quality, sell_in)
-        
+
+        quality = int(quality)
+        sell_in = int(sell_in)
+
         service.create_item(name, quality, sell_in)
         return service.items(name, int(quality), int(sell_in)), 201
