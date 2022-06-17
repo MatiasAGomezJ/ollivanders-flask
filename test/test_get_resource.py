@@ -21,6 +21,8 @@ def test_get():
 def test_post_delete():
     app = api.app.test_client()
 
+    # Post
+
     name = "Time-Turner"
     quality = 25
     sell_in = 13
@@ -36,3 +38,14 @@ def test_post_delete():
     assert resp_dict.get("sell_in") == sell_in
 
     assert resp.get_data(True) == '[{"name": "' + name + '", "quality": ' + str(quality) + ', "sell_in": ' + str(sell_in) + '}]\n'
+
+    # Delete
+
+    resp = app.delete(f"/item/{name}/{quality}/{sell_in}")
+
+    assert resp.status_code == 200
+
+    assert not json.loads(resp.data.decode())
+
+    assert resp.get_data(True) != '[{"name": "' + name + '", "quality": ' + str(
+        quality) + ', "sell_in": ' + str(sell_in) + '}]\n'
