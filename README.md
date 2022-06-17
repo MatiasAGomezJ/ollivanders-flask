@@ -13,3 +13,5 @@ uri = mongodb+srv://<username>:<password>@<database>.glkvp.mongodb.net/?retryWri
 > - username: nombre de usuario de que pueda acceder a la database
 > - password: del usuario
 > - database: Base de datos a conectarse
+
+Solo hay test del endpoint del item, que era el mas complicado
