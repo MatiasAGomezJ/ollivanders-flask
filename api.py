@@ -20,7 +20,8 @@ api.add_resource(index, '/')
 api.add_resource(inventario, '/inventario')
 
 # curl localhost:5000/item/Aged_brie/22/8
-api.add_resource(item, '/item/<name>/<quality>/<sell_in>')
+api.add_resource(item, '/item/<name>/<quality>/<sell_in>',
+                 '/item/<name>/<quality>/<sell_in>/<new_name>/<new_quality>/<new_sell_in>')
 
 # curl localhost:5000/name/Aged_brie
 api.add_resource(name, '/name/<name>')

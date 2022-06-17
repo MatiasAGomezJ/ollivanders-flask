@@ -2,6 +2,7 @@ from flask_restful import fields, marshal_with
 from repository.get_db_atlas import get_db_atlas
 from flask import g
 
+
 class service:
 
     item_schema = {
@@ -45,7 +46,7 @@ class service:
             items.append(item)
 
         return items
-    
+
     @staticmethod
     @marshal_with(item_schema)
     def items_by_quality(quality):
@@ -74,3 +75,14 @@ class service:
     def create_item(name, quality, sell_in):
         db_atlas = get_db_atlas()
         db_atlas.create_item(name, quality, sell_in)
+
+    @staticmethod
+    def delete_item(name, quality, sell_in):
+        db_atlas = get_db_atlas()
+        db_atlas.delete_item(name, quality, sell_in)
+
+    @staticmethod
+    def update_item(name, quality, sell_in, new_name, new_quality, new_sell_in):
+        db_atlas = get_db_atlas()
+        db_atlas.update_item(name, quality, sell_in,
+                             new_name, new_quality, new_sell_in)

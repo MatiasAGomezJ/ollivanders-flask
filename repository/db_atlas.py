@@ -1,4 +1,3 @@
-from repository.stock import stock
 from repository.get_db import get_db
 
 
@@ -42,3 +41,8 @@ class db_atlas:
     def delete_item(name, quality, sell_in):
         db = get_db()
         return db.connectar_db().delete_one({"name": name, "quality": quality, "sell_in": sell_in})
+
+    @staticmethod
+    def update_item(name, quality, sell_in, new_name, new_quality, new_sell_in):
+        db = get_db()
+        return db.connectar_db().update_one({"name": name, "quality": quality, "sell_in": sell_in}, {"$set": {"name": new_name, "quality": new_quality, "sell_in": new_sell_in}})
