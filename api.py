@@ -9,7 +9,8 @@ from resources.sell_in import sell_in
 from create_app import create_app
 # Cambio
 
-app = create_app(__name__)
+app = create_app()
+
 api = Api(app, catch_all_404s=True)
 
 # curl localhost:5000
