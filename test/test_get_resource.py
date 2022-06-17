@@ -15,7 +15,7 @@ def test_get():
     assert resp_dict.get("quality") == 50
     assert resp_dict.get("sell_in") == 7
 
-    assert resp.get_data() == b'[{"name": "Sulfuras", "quality": 50, "sell_in": 7}]\n'
+    assert resp.get_data(True) == '[{"name": "Sulfuras", "quality": 50, "sell_in": 7}]\n'
 
 
 def test_post_delete():
@@ -24,11 +24,6 @@ def test_post_delete():
     name = "Time-Turner"
     quality = 25
     sell_in = 13
-    document = {
-        name: name,
-        quality: quality,
-        sell_in: sell_in
-    }
 
     resp = app.post(f"/item/{name}/{quality}/{sell_in}")
 
