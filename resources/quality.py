@@ -1,11 +1,10 @@
-from flask_restful import Resource, abort, request
+from flask_restful import Resource, abort
 from services.service import service
 
 
 class quality(Resource):
-    def get(self):
-        args = request.args
-        quality = args.get("quality")
+    def get(self, quality):
+        
         if quality.isnumeric():
             quality = int(quality)
 

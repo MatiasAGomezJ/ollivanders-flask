@@ -1,11 +1,10 @@
-from flask_restful import Resource, abort, request
+from flask_restful import Resource, abort
 from services.service import service
 
 
 class sell_in(Resource):
-    def get(self):
-        args = request.args
-        sell_in = args.get("sell_in")
+    def get(self, sell_in):
+
         if sell_in.isnumeric():
             sell_in = int(sell_in)
 

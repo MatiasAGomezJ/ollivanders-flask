@@ -1,4 +1,4 @@
-from repository.db_atlas import db_atlas
+from repository.get_db_atlas import db_atlas
 import pytest
 
 
